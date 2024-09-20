@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.bg-light {
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-links li {
+    margin: 10px 0;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
