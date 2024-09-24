@@ -1,0 +1,267 @@
+body{
+background-image: url(../bret.webp) ;
+
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Ficha de perfil */
+main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.personal-info p {
+    font-size: 1.1rem;
+}
+
+/* Seções */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p, ul {
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.job {
+    margin-bottom: 15px;
+}
+
+.job h3 {
+    font-size: 1.5rem;
+}
+
+.job em {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contato */
+.contact-section p {
+    font-size: 1.2rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-picture {
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p, ul {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    p, ul {
+        font-size: 0.9rem;
+        header h1 {
+            font-size: 2.5em;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+/* Estilo geral do navbar */
+nav {
+    background-color: #333; /* Cor de fundo do navbar */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: white; /* Cor do texto */
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+/* Animação de sublinhado deslizante */
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #ff6f61; /* Cor do sublinhado */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav a:hover {
+    color: #ff6f61; /* Cor ao passar o mouse */
+}
+
+nav a:hover::after {
+    width: 100%; /* Efeito de sublinhado ao passar o mouse */
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.bg-light {
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-links li {
+    margin: 10px 0;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+}
+
+
+
+
+
