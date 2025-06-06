@@ -3,64 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Online - Kevin Souza</title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <script src="./js/app.js"></script>
+    <title>Currículo Profissional | Seu Nome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
+    <div class="theme-switcher">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun active"></i>
+    </div>
+
     <header>
         <div class="container">
-            <h1>Kevin Gabriel de Souza</h1>
-            <p>Desenvolvedor Web | Designer Gráfico |</p>
+            <div class="profile">
+                <div class="profile-img-container">
+                    <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
+                    <div class="img-hover-effect"></div>
+                </div>
+                <h1>Seu Nome Completo</h1>
+                <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+            </div>
         </div>
     </header>
-    <nav>
-        <ul>
- 
-            <li><a href="habiidades.html">Habilidades</a></li>
 
-            <li><a href="./contato.html">Contato</a></li>
+    <nav class="sticky-nav">
+        <ul>
+            <li class="active"><a href="#sobre" data-tab="sobre"><i class="fas fa-user"></i> <span>Sobre</span></a></li>
+            <li><a href="#experiencia" data-tab="experiencia"><i class="fas fa-briefcase"></i> <span>Experiência</span></a></li>
+            <li><a href="#formacao" data-tab="formacao"><i class="fas fa-graduation-cap"></i> <span>Formação</span></a></li>
+            <li><a href="#habilidades" data-tab="habilidades"><i class="fas fa-code"></i> <span>Habilidades</span></a></li>
+            <li><a href="#portfolio" data-tab="portfolio"><i class="fas fa-folder-open"></i> <span>Portfólio</span></a></li>
+            <li><a href="#contato" data-tab="contato"><i class="fas fa-envelope"></i> <span>Contato</span></a></li>
         </ul>
     </nav>
-      
 
     <main>
-        <section class="profile-section">
-            <div class="profile-picture">
-                <img src="sua-foto.jpg" alt="Sua Foto">
-            </div>
-            <div class="personal-info">
-                <h2>Informações Pessoais</h2>
-                <p><strong>Email:</strong> kevinsouzag42@gmail.com</p>
-                <p><strong>Telefone:</strong> (11) 95987-6385</p>
-                <p><strong>Endereço:</strong> AV.Princesa Isabel, 460, Ribeirão Pires - São Paulo</p>
-                <p><strong>Data de Nascimento:</strong> 22/06/2009</p>
-            </div>
-        </section>
+        <div class="tab-content active" id="sobre">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Sobre Mim</span></h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Uma introdução sofisticada sobre você, destacando sua trajetória profissional e objetivos. Fale sobre suas principais competências e o que diferencia você no mercado.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                            <div class="personal-info">
+                                <div>
+                                    <span>Nome:</span>
+                                    <p>Seu Nome Completo</p>
+                                </div>
+                                <div>
+                                    <span>Idade:</span>
+                                    <p>XX anos</p>
+                                </div>
+                                <div>
+                                    <span>Localização:</span>
+                                    <p>Sua Cidade, Estado</p>
+                                </div>
+                                <div>
+                                    <span>Email:</span>
+                                    <p>seuemail@profissional.com</p>
+                                </div>
+                            </div>
+                            <a href="seu-curriculo.pdf" download class="btn btn-primary pulse">Download CV <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-circle" data-value="95">
+                                    <svg class="circle-chart" viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="stat-number">0%</div>
+                                </div>
+                                <h3>Liderança</h3>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-circle" data-value="85">
+                                    <svg class="circle-chart" viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="stat-number">0%</div>
+                                </div>
+                                <h3>Gestão</h3>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-circle" data-value="90">
+                                    <svg class="circle-chart" viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="stat-number">0%</div>
+                                </div>
+                                <h3>Comunicação</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <section class="about-section">
-            <h2>Sobre Mim</h2>
-            <p>Sou um estudante com 7 meses de experiência em desenvolvimento web, design de interfaces. Procuro sempre novas oportunidades para expandir meus conhecimentos e contribuir com soluções criativas para problemas tecnológicos.</p>
-        </section>
+        <div class="tab-content" id="experiencia">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Experiência Profissional</span></h2>
+                    <div class="timeline">
+                        <div class="timeline-item animate">
+                            <div class="timeline-date">2020 - Presente</div>
+                            <div class="timeline-content">
+                                <h3>Diretor de Marketing</h3>
+                                <h4>Empresa Renomada</h4>
+                                <p>Responsável por toda a estratégia de marketing digital e tradicional, liderando uma equipe de 15 profissionais.</p>
+                                <ul>
+                                    <li>Aumento de 150% no tráfego orgânico</li>
+                                    <li>Redução de 30% no CAC</li>
+                                    <li>Implementação de novas tecnologias de automação</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item animate">
+                            <div class="timeline-date">2017 - 2020</div>
+                            <div class="timeline-content">
+                                <h3>Gerente de Produto</h3>
+                                <h4>Startup Inovadora</h4>
+                                <p>Gestão do ciclo de vida completo do produto, desde a concepção até o lançamento no mercado.</p>
+                                <ul>
+                                    <li>Liderança de equipe multifuncional</li>
+                                    <li>Lançamento de 3 novos produtos</li>
+                                    <li>Growth de 200% na base de clientes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-       
+        <div class="tab-content" id="formacao">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Formação Acadêmica</span></h2>
+                    <div class="education-grid">
+                        <div class="education-item animate">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="education-content">
+                                <span class="education-year">2015 - 2019</span>
+                                <h3>MBA em Gestão Empresarial</h3>
+                                <h4>Universidade de Excelência</h4>
+                                <p>TCC com nota máxima sobre "Inovação em Modelos de Negócio"</p>
+                            </div>
+                        </div>
+                        <div class="education-item animate">
+                            <div class="education-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="education-content">
+                                <span class="education-year">2011 - 2015</span>
+                                <h3>Bacharelado em Administração</h3>
+                                <h4>Faculdade Reconhecida</h4>
+                                <p>Formado com honras (magna cum laude)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <section class="education-section">
-            <h2>Vida Academica</h2>
-            <p><strong> Etec Maria Cristina Medeiros</strong> — Cursando 1°ano</p>
-        </section>
+        <div class="tab-content" id="habilidades">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Habilidades & Competências</span></h2>
+                    <div class="skills-container">
+                        <div class="skills-column">
+                            <h3><i class="fas fa-laptop-code"></i> Técnicas</h3>
+                            <div class="skill-item animate">
+                                <div class="skill-info">
+                                    <span>Gestão de Projetos</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item animate">
+                                <div class="skill-info">
+                                    <span>Análise de Dados</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-column">
+                            <h3><i class="fas fa-users"></i> Interpessoais</h3>
+                            <div class="skill-item animate">
+                                <div class="skill-info">
+                                    <span>Liderança</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item animate">
+                                <div class="skill-info">
+                                    <span>Comunicação</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-column">
+                            <h3><i class="fas fa-language"></i> Idiomas</h3>
+                            <div class="language-item">
+                                <div class="language-name">
+                                    <span>Português</span>
+                                    <span>Nativo</span>
+                                </div>
+                                <div class="language-proficiency">
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-name">
+                                    <span>Inglês</span>
+                                    <span>Avançado</span>
+                                </div>
+                                <div class="language-proficiency">
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot filled"></div>
+                                    <div class="proficiency-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <section class="contact-section">
-            <h2>Contato</h2>
-            <p>Entre em contato para mais informações ou oportunidades!</p>
-            <p><strong>Email:</strong> kevinsouzag42@gmail.com</p>
-        </section>
+        <div class="tab-content" id="portfolio">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Portfólio</span></h2>
+                    <div class="portfolio-filter">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="design">Design</button>
+                        <button class="filter-btn" data-filter="web">Web</button>
+                        <button class="filter-btn" data-filter="marketing">Marketing</button>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item animate" data-category="web">
+                            <div class="portfolio-img">
+                                <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Projeto Web</h3>
+                                        <p>Desenvolvimento de plataforma E-commerce</p>
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item animate" data-category="design">
+                            <div class="portfolio-img">
+                                <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Design System</h3>
+                                        <p>Criação de sistema de design para startup</p>
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="contato">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title"><span>Entre em Contato</span></h2>
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h3>Localização</h3>
+                                    <p>São Paulo, SP - Brasil</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>contato@seunome.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h3>Telefone</h3>
+                                    <p>+55 (11) 99999-9999</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Seu Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Seu Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Assunto">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Sua Mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Kevin Gabriel de Souza. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Seu Nome. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
