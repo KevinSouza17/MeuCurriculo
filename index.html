@@ -1,360 +1,398 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Profissional | Seu Nome</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Gabriel de Souza — Ficha Técnica</title>
+<meta name="description" content="Ficha técnica / currículo de Kevin Gabriel de Souza, estudante de TI e desenvolvedor Fullstack em formação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f2f1ed;
+    --card: #ffffff;
+    --ink: #111111;
+    --muted: #6b6b6b;
+    --line: #111111;
+    --line-soft: #cfcfc9;
+    --maxw: 760px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'JetBrains Mono', 'Courier New', monospace;
+    font-size:14px;
+    line-height:1.55;
+    padding:clamp(16px,5vw,48px) 0 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .card{
+    position:relative;
+    max-width:var(--maxw);
+    margin:0 auto;
+    background:var(--card);
+    border:1.5px solid var(--ink);
+    padding:clamp(20px,5vw,40px);
+  }
+
+  /* registration / crop marks */
+  .card::before, .card::after,
+  .card .mark-tr, .card .mark-br{
+    content:'';
+    position:absolute;
+    width:14px;
+    height:14px;
+    border:1.5px solid var(--ink);
+  }
+  .card::before{ top:-1.5px; left:-1.5px; border-right:none; border-bottom:none; }
+  .card::after{ bottom:-1.5px; left:-1.5px; border-right:none; border-top:none; }
+  .card .mark-tr{ position:absolute; top:-1.5px; right:-1.5px; border-left:none; border-bottom:none; }
+  .card .mark-br{ position:absolute; bottom:-1.5px; right:-1.5px; border-left:none; border-top:none; }
+
+  .doc-id{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--muted);
+    text-transform:uppercase;
+    border-bottom:1px dashed var(--line-soft);
+    padding-bottom:14px;
+    margin-bottom:24px;
+  }
+
+  .eyebrow{
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:block;
+    margin-bottom:.6em;
+  }
+
+  /* ===== header block: photo + identity ===== */
+  .id-block{
+    display:flex;
+    gap:22px;
+    align-items:flex-start;
+    padding-bottom:22px;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:22px;
+    flex-wrap:wrap;
+  }
+  .photo{
+    width:88px;
+    height:110px;
+    flex:0 0 auto;
+    border:1.5px solid var(--ink);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:.02em;
+    background:
+      repeating-linear-gradient(45deg, transparent, transparent 5px, var(--line-soft) 5px, var(--line-soft) 6px);
+    overflow:hidden;
+  }
+  .photo img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+  }
+  .photo.has-photo img{display:block;}
+  .photo.has-photo .initials{display:none;}
+  .photo-controls{
+    margin-top:8px;
+    font-size:.64rem;
+    text-align:center;
+    color:var(--muted);
+  }
+  .photo-controls label{
+    display:inline-block;
+    border-bottom:1px dashed var(--ink);
+    cursor:pointer;
+    color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .photo-controls label:hover{color:var(--muted); border-color:var(--muted);}
+  .photo-controls input[type=file]{display:none;}
+  .photo-wrap{flex:0 0 auto; display:flex; flex-direction:column; align-items:center;}
+  .identity{flex:1 1 220px; min-width:220px;}
+  .identity h1{
+    font-family:'JetBrains Mono', monospace;
+    font-size:clamp(1.25rem,4vw,1.55rem);
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0 0 4px;
+    text-transform:uppercase;
+  }
+  .identity .role{
+    font-size:.85rem;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .field-grid{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:5px 14px;
+    font-size:.8rem;
+  }
+  .field-grid dt{color:var(--muted); text-transform:uppercase; letter-spacing:.05em; font-size:.7rem; padding-top:2px;}
+  .field-grid dd{margin:0; font-weight:600;}
+
+  /* ===== section shell ===== */
+  section{margin-bottom:26px;}
+  .sec-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:6px;
+    margin-bottom:14px;
+  }
+  .sec-head h2{
+    font-size:.82rem;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-weight:700;
+    margin:0;
+  }
+  .sec-head .sec-num{font-size:.72rem; color:var(--muted);}
+
+  p.lede{
+    font-size:.86rem;
+    max-width:64ch;
+    margin:0;
+  }
+
+  /* ===== spec rows (skills) ===== */
+  .spec-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:4px 16px;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line-soft);
+    font-size:.82rem;
+  }
+  .spec-row:last-child{border-bottom:none;}
+  .spec-row .k{color:var(--muted); text-transform:uppercase; letter-spacing:.05em; font-size:.72rem; padding-top:2px;}
+  .spec-row .v{font-weight:500;}
+  @media (max-width:520px){
+    .spec-row{grid-template-columns:1fr;}
+  }
+
+  /* ===== projects ===== */
+  .proj-row{
+    padding:12px 0;
+    border-bottom:1px dashed var(--line-soft);
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:2px 12px;
+  }
+  .proj-row:last-child{border-bottom:none;}
+  .proj-row .idx{font-weight:700; color:var(--muted); font-size:.78rem; padding-top:2px;}
+  .proj-row .idx.featured{color:var(--ink);}
+  .proj-row .p-name{font-weight:700; font-size:.9rem; text-transform:uppercase; letter-spacing:.02em;}
+  .proj-row .p-type{font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin:2px 0 6px;}
+  .proj-row .p-desc{font-size:.82rem; margin:0 0 6px;}
+  .proj-row a{color:var(--ink); font-size:.78rem;}
+  .more-note{margin-top:10px; font-size:.78rem; color:var(--muted);}
+
+  /* ===== contact ===== */
+  .contact-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 0;
+    border-bottom:1px dashed var(--line-soft);
+    font-size:.84rem;
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .k{color:var(--muted); text-transform:uppercase; letter-spacing:.05em; font-size:.72rem;}
+  .contact-row a{color:var(--ink); font-weight:600;}
+
+  a{text-decoration:none; border-bottom:1px solid var(--ink);}
+  a:hover{color:var(--muted); border-color:var(--muted);}
+
+  /* ===== footer: barcode + stamp ===== */
+  .doc-footer{
+    margin-top:30px;
+    padding-top:18px;
+    border-top:2px solid var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .barcode{
+    display:flex;
+    align-items:flex-end;
+    gap:2px;
+    height:34px;
+  }
+  .barcode span{
+    display:inline-block;
+    width:2px;
+    background:var(--ink);
+  }
+  .stamp{
+    text-align:right;
+    font-size:.68rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    line-height:1.6;
+  }
+  .stamp b{color:var(--ink);}
+</style>
 </head>
-<body class="dark-mode">
-    <div class="theme-switcher">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun active"></i>
+<body>
+
+<div class="card">
+  <span class="mark-tr"></span><span class="mark-br"></span>
+
+  <div class="doc-id">
+    <span>Ficha técnica · Rev. 01</span>
+    <span>ID KG-TI03</span>
+  </div>
+
+  <div class="id-block">
+    <div class="photo-wrap">
+      <div class="photo" id="photo-box">
+        <span class="initials">KG</span>
+        <img id="photo-img" src="foto.jpg" alt="Foto de Kevin Gabriel de Souza" onerror="this.style.display='none'; document.getElementById('photo-box').classList.remove('has-photo');" onload="document.getElementById('photo-box').classList.add('has-photo'); this.style.display='block';">
+      </div>
+      <div class="photo-controls">
+        <label for="photo-upload">trocar foto</label>
+        <input type="file" id="photo-upload" accept="image/*">
+        <div style="margin-top:3px; max-width:110px; line-height:1.3;">p/ fixar: salve como <b>foto.jpg</b> na pasta</div>
+      </div>
+    </div>
+    <div class="identity">
+      <h1>Kevin Gabriel de Souza</h1>
+      <div class="role">Desenvolvedor Fullstack em formação</div>
+      <dl class="field-grid">
+        <dt>Instituição</dt><dd>ETEC MCM</dd>
+        <dt>Curso</dt><dd>Técnico em TI — 3º ano</dd>
+        <dt>Objetivo</dt><dd>Ingressar na FATEC</dd>
+        <dt>GitHub</dt><dd>github.com/KevinSouza17 · 51 repos</dd>
+      </dl>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Perfil</h2><span class="sec-num">01</span></div>
+    <p class="lede">
+      Estudante de TI em formação como desenvolvedor Fullstack, com prática em
+      front-end, back-end e bancos de dados. Interesse em transformar ideias em
+      soluções digitais funcionais, aprendendo uma tecnologia nova a cada projeto.
+    </p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Habilidades</h2><span class="sec-num">02</span></div>
+    <div class="spec-row"><span class="k">Linguagens</span><span class="v">Python · Java · JavaScript · TypeScript · PHP · C#</span></div>
+    <div class="spec-row"><span class="k">Desenvolvimento web</span><span class="v">HTML5 · CSS3 · React · Node.js · Spring Boot · Bootstrap</span></div>
+    <div class="spec-row"><span class="k">Bancos de dados</span><span class="v">MySQL · PostgreSQL · MongoDB</span></div>
+    <div class="spec-row"><span class="k">Ferramentas</span><span class="v">Git · Docker · VS Code · Figma · Photoshop</span></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Projetos</h2><span class="sec-num">03</span></div>
+
+    <div class="proj-row" style="border-bottom:1.5px solid var(--ink); padding-bottom:16px; margin-bottom:4px;">
+      <span class="idx featured">TCC</span>
+      <div>
+        <div class="p-name">FitSync</div>
+        <div class="p-type">React · TypeScript · Tailwind CSS · Supabase — Trabalho de Conclusão de Curso</div>
+        <p class="p-desc">Aplicativo de acompanhamento de treinos e fitness, desenvolvido como TCC. Construído com React e TypeScript via Vite, estilizado com Tailwind CSS e com Supabase como backend para dados e autenticação.</p>
+        <a href="https://github.com/KevinSouza17/fit-sync-kevin" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </div>
     </div>
 
-    <header>
-        <div class="container">
-            <div class="profile">
-                <div class="profile-img-container">
-                    <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
-                    <div class="img-hover-effect"></div>
-                </div>
-                <h1>Seu Nome Completo</h1>
-                <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-            </div>
-        </div>
-    </header>
+    <div class="proj-row">
+      <span class="idx">01</span>
+      <div>
+        <div class="p-name">Sabores do Chile</div>
+        <div class="p-type">HTML · CSS · Site institucional multi-página</div>
+        <p class="p-desc">Site sobre a culinária tradicional chilena, dividido em páginas de Início, Bebidas, Doces e Salgados, com curadoria de pratos, bebidas e regiões do país.</p>
+        <a href="https://kevinsouza17.github.io/sabor/chile/index.html" target="_blank" rel="noopener">Ver site →</a>
+      </div>
+    </div>
 
-    <nav class="sticky-nav">
-        <ul>
-            <li class="active"><a href="#sobre" data-tab="sobre"><i class="fas fa-user"></i> <span>Sobre</span></a></li>
-            <li><a href="#experiencia" data-tab="experiencia"><i class="fas fa-briefcase"></i> <span>Experiência</span></a></li>
-            <li><a href="#formacao" data-tab="formacao"><i class="fas fa-graduation-cap"></i> <span>Formação</span></a></li>
-            <li><a href="#habilidades" data-tab="habilidades"><i class="fas fa-code"></i> <span>Habilidades</span></a></li>
-            <li><a href="#portfolio" data-tab="portfolio"><i class="fas fa-folder-open"></i> <span>Portfólio</span></a></li>
-            <li><a href="#contato" data-tab="contato"><i class="fas fa-envelope"></i> <span>Contato</span></a></li>
-        </ul>
-    </nav>
+    <div class="proj-row">
+      <span class="idx">02</span>
+      <div>
+        <div class="p-name">projetoAM</div>
+        <div class="p-type">CSS · Estilização</div>
+        <p class="p-desc">Projeto com foco em CSS, explorando layout e estilização de interface como parte dos estudos técnicos em TI.</p>
+        <a href="https://github.com/KevinSouza17/projetoAM" target="_blank" rel="noopener">Ver no GitHub →</a>
+      </div>
+    </div>
 
-    <main>
-        <div class="tab-content active" id="sobre">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Sobre Mim</span></h2>
-                    <div class="about-content">
-                        <div class="about-text">
-                            <p>Uma introdução sofisticada sobre você, destacando sua trajetória profissional e objetivos. Fale sobre suas principais competências e o que diferencia você no mercado.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
-                            <div class="personal-info">
-                                <div>
-                                    <span>Nome:</span>
-                                    <p>Seu Nome Completo</p>
-                                </div>
-                                <div>
-                                    <span>Idade:</span>
-                                    <p>XX anos</p>
-                                </div>
-                                <div>
-                                    <span>Localização:</span>
-                                    <p>Sua Cidade, Estado</p>
-                                </div>
-                                <div>
-                                    <span>Email:</span>
-                                    <p>seuemail@profissional.com</p>
-                                </div>
-                            </div>
-                            <a href="seu-curriculo.pdf" download class="btn btn-primary pulse">Download CV <i class="fas fa-download"></i></a>
-                        </div>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <div class="stat-circle" data-value="95">
-                                    <svg class="circle-chart" viewBox="0 0 36 36">
-                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    </svg>
-                                    <div class="stat-number">0%</div>
-                                </div>
-                                <h3>Liderança</h3>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-circle" data-value="85">
-                                    <svg class="circle-chart" viewBox="0 0 36 36">
-                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    </svg>
-                                    <div class="stat-number">0%</div>
-                                </div>
-                                <h3>Gestão</h3>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-circle" data-value="90">
-                                    <svg class="circle-chart" viewBox="0 0 36 36">
-                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path class="circle-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    </svg>
-                                    <div class="stat-number">0%</div>
-                                </div>
-                                <h3>Comunicação</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+    <p class="more-note">+ outros repositórios em <a href="https://github.com/KevinSouza17" target="_blank" rel="noopener">github.com/KevinSouza17</a></p>
+  </section>
 
-        <div class="tab-content" id="experiencia">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Experiência Profissional</span></h2>
-                    <div class="timeline">
-                        <div class="timeline-item animate">
-                            <div class="timeline-date">2020 - Presente</div>
-                            <div class="timeline-content">
-                                <h3>Diretor de Marketing</h3>
-                                <h4>Empresa Renomada</h4>
-                                <p>Responsável por toda a estratégia de marketing digital e tradicional, liderando uma equipe de 15 profissionais.</p>
-                                <ul>
-                                    <li>Aumento de 150% no tráfego orgânico</li>
-                                    <li>Redução de 30% no CAC</li>
-                                    <li>Implementação de novas tecnologias de automação</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item animate">
-                            <div class="timeline-date">2017 - 2020</div>
-                            <div class="timeline-content">
-                                <h3>Gerente de Produto</h3>
-                                <h4>Startup Inovadora</h4>
-                                <p>Gestão do ciclo de vida completo do produto, desde a concepção até o lançamento no mercado.</p>
-                                <ul>
-                                    <li>Liderança de equipe multifuncional</li>
-                                    <li>Lançamento de 3 novos produtos</li>
-                                    <li>Growth de 200% na base de clientes</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+  <section>
+    <div class="sec-head"><h2>Contato</h2><span class="sec-num">04</span></div>
+    <div class="contact-row"><span class="k">GitHub</span><a href="https://github.com/KevinSouza17" target="_blank" rel="noopener">@KevinSouza17</a></div>
+    <div class="contact-row"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kevin-gabriel-souza/" target="_blank" rel="noopener">Kevin Gabriel Souza</a></div>
+    <div class="contact-row"><span class="k">Instagram</span><a href="https://www.instagram.com/kevin.gsouza/" target="_blank" rel="noopener">@kevin.gsouza</a></div>
+  </section>
 
-        <div class="tab-content" id="formacao">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Formação Acadêmica</span></h2>
-                    <div class="education-grid">
-                        <div class="education-item animate">
-                            <div class="education-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="education-content">
-                                <span class="education-year">2015 - 2019</span>
-                                <h3>MBA em Gestão Empresarial</h3>
-                                <h4>Universidade de Excelência</h4>
-                                <p>TCC com nota máxima sobre "Inovação em Modelos de Negócio"</p>
-                            </div>
-                        </div>
-                        <div class="education-item animate">
-                            <div class="education-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div class="education-content">
-                                <span class="education-year">2011 - 2015</span>
-                                <h3>Bacharelado em Administração</h3>
-                                <h4>Faculdade Reconhecida</h4>
-                                <p>Formado com honras (magna cum laude)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+  <div class="doc-footer">
+    <div class="barcode" aria-hidden="true"></div>
+    <div class="stamp"><b>Documento gerado</b><br>a partir do perfil GitHub</div>
+  </div>
+</div>
 
-        <div class="tab-content" id="habilidades">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Habilidades & Competências</span></h2>
-                    <div class="skills-container">
-                        <div class="skills-column">
-                            <h3><i class="fas fa-laptop-code"></i> Técnicas</h3>
-                            <div class="skill-item animate">
-                                <div class="skill-info">
-                                    <span>Gestão de Projetos</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item animate">
-                                <div class="skill-info">
-                                    <span>Análise de Dados</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skills-column">
-                            <h3><i class="fas fa-users"></i> Interpessoais</h3>
-                            <div class="skill-item animate">
-                                <div class="skill-info">
-                                    <span>Liderança</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item animate">
-                                <div class="skill-info">
-                                    <span>Comunicação</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skills-column">
-                            <h3><i class="fas fa-language"></i> Idiomas</h3>
-                            <div class="language-item">
-                                <div class="language-name">
-                                    <span>Português</span>
-                                    <span>Nativo</span>
-                                </div>
-                                <div class="language-proficiency">
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                </div>
-                            </div>
-                            <div class="language-item">
-                                <div class="language-name">
-                                    <span>Inglês</span>
-                                    <span>Avançado</span>
-                                </div>
-                                <div class="language-proficiency">
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot filled"></div>
-                                    <div class="proficiency-dot"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+<script>
+  // photo upload — live preview in the browser (nothing is saved/uploaded anywhere)
+  (function(){
+    var input = document.getElementById('photo-upload');
+    var img = document.getElementById('photo-img');
+    var box = document.getElementById('photo-box');
+    input.addEventListener('change', function(e){
+      var file = e.target.files && e.target.files[0];
+      if(!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        img.onerror = null;
+        img.src = ev.target.result;
+        img.style.display = 'block';
+        box.classList.add('has-photo');
+      };
+      reader.readAsDataURL(file);
+    });
+  })();
 
-        <div class="tab-content" id="portfolio">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Portfólio</span></h2>
-                    <div class="portfolio-filter">
-                        <button class="filter-btn active" data-filter="all">Todos</button>
-                        <button class="filter-btn" data-filter="design">Design</button>
-                        <button class="filter-btn" data-filter="web">Web</button>
-                        <button class="filter-btn" data-filter="marketing">Marketing</button>
-                    </div>
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item animate" data-category="web">
-                            <div class="portfolio-img">
-                                <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Projeto Web</h3>
-                                        <p>Desenvolvimento de plataforma E-commerce</p>
-                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item animate" data-category="design">
-                            <div class="portfolio-img">
-                                <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
-                                <div class="portfolio-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Design System</h3>
-                                        <p>Criação de sistema de design para startup</p>
-                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="tab-content" id="contato">
-            <section class="section">
-                <div class="container">
-                    <h2 class="section-title"><span>Entre em Contato</span></h2>
-                    <div class="contact-container">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h3>Localização</h3>
-                                    <p>São Paulo, SP - Brasil</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h3>Email</h3>
-                                    <p>contato@seunome.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone-alt"></i>
-                                <div>
-                                    <h3>Telefone</h3>
-                                    <p>+55 (11) 99999-9999</p>
-                                </div>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <form class="contact-form">
-                            <div class="form-group">
-                                <input type="text" placeholder="Seu Nome" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Seu Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Assunto">
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Sua Mensagem" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> Seu Nome. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+  // build a pseudo-random barcode purely as a decorative document element
+  (function(){
+    var bc = document.querySelector('.barcode');
+    var seed = 42;
+    function rnd(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    for(var i=0;i<46;i++){
+      var bar = document.createElement('span');
+      var h = 10 + Math.floor(rnd()*24);
+      var w = rnd() > 0.75 ? 3 : 2;
+      bar.style.height = h + 'px';
+      bar.style.width = w + 'px';
+      bc.appendChild(bar);
+    }
+  })();
+</script>
 </body>
 </html>
